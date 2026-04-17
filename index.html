@@ -3,508 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Automation Agency - The Complete System</title>
+    <title>AI Automation Agency — The Complete Execution System</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            line-height: 1.7; 
-            color: #333; 
-            background: #fff;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 30px; }
-        
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 30px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        .hero-outcome {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.85;
-        }
-        .cta-button {
-            display: inline-block;
-            background: #e94560;
-            color: white;
-            padding: 20px 60px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
-        }
-        
-        /* Sections */
-        section { padding: 80px 20px; }
-        .dark { background: #f8f9fa; }
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-            color: #1a1a2e;
-            text-align: center;
-        }
-        h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 40px 0 20px;
-            color: #16213e;
-        }
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        /* Proof Box */
-        .proof-box {
-            background: #1a1a2e;
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .proof-box h3 {
-            color: #e94560;
-            margin-top: 0;
-        }
-        
-        /* Objections */
-        .objection {
-            background: white;
-            padding: 30px;
-            margin: 20px 0;
-            border-left: 5px solid #e94560;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .objection h4 {
-            font-size: 1.3rem;
-            color: #e94560;
-            margin-bottom: 15px;
-        }
-        
-        /* Features */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .feature {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .feature h4 {
-            color: #e94560;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Guarantee */
-        .guarantee {
-            background: #16213e;
-            color: white;
-            padding: 60px 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        .guarantee h3 {
-            color: #e94560;
-            margin-top: 0;
-        }
-        
-        /* Price */
-        .price-section {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .price {
-            font-size: 5rem;
-            font-weight: 900;
-            color: #e94560;
-            margin: 20px 0;
-        }
-        .price-old {
-            font-size: 2rem;
-            text-decoration: line-through;
-            opacity: 0.5;
-        }
-        
-        /* Footer */
-        footer {
-            background: #0f0f1e;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            h2 { font-size: 1.8rem; }
-            .price { font-size: 3.5rem; }
-        }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #e94560; --light: #f8f9fa; --white: #ffffff; --text: #333333; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.8; color: var(--text); background: var(--white); font-size: 18px; }
+        section { padding: 120px 20px; position: relative; }
+        .container { max-width: 740px; margin: 0 auto; }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); text-align: center; padding: 140px 20px 120px; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -2px; }
+        .hero .pattern-interrupt { display: block; color: var(--accent); }
+        .hero .mechanism { font-size: 1.4rem; margin-bottom: 20px; opacity: 0.95; }
+        .hero .outcome { font-size: 1.25rem; margin-bottom: 50px; opacity: 0.85; }
+        .cta-button { display: inline-block; background: var(--accent); color: var(--white); padding: 22px 60px; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4); }
+        .micro-reassurance { margin-top: 25px; font-size: 0.95rem; opacity: 0.7; }
+        .light-section { background: var(--white); }
+        .gray-section { background: var(--light); }
+        .dark-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); }
+        .accent-section { background: var(--accent); color: var(--white); }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 50px; line-height: 1.3; color: var(--primary); }
+        .dark-section h2, .accent-section h2 { color: var(--white); }
+        h3 { font-size: 1.5rem; font-weight: 700; margin: 60px 0 25px; color: var(--secondary); }
+        .dark-section h3, .accent-section h3 { color: var(--white); }
+        h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; color: var(--accent); }
+        p { margin-bottom: 28px; line-height: 1.9; }
+        .bold-statement { font-size: 1.4rem; font-weight: 700; text-align: center; margin: 60px 0; padding: 40px; background: var(--light); border-left: 5px solid var(--accent); color: var(--primary); line-height: 1.5; }
+        .dark-section .bold-statement { background: rgba(255,255,255,0.1); color: var(--white); }
+        .micro-headline { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 15px; }
+        .proof-box { background: var(--primary); color: var(--white); padding: 60px; border-radius: 10px; margin: 60px 0; text-align: center; }
+        .proof-box h3 { color: var(--accent); margin-top: 0; font-size: 1.8rem; }
+        .proof-item { font-size: 1.2rem; margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 5px; }
+        .objection { background: var(--white); padding: 40px; margin: 30px 0; border-left: 5px solid var(--accent); border-radius: 0 10px 10px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .objection h4 { font-size: 1.2rem; margin-bottom: 20px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 60px 0; }
+        .feature { background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-5px); }
+        .feature h4 { font-size: 1.2rem; margin-bottom: 15px; }
+        .guarantee { background: var(--secondary); color: var(--white); padding: 80px 60px; border-radius: 10px; text-align: center; margin: 60px 0; }
+        .guarantee h3 { color: var(--accent); margin-top: 0; font-size: 2rem; }
+        .price-section { text-align: center; }
+        .price-old { font-size: 2rem; text-decoration: line-through; opacity: 0.5; margin-bottom: 10px; }
+        .price { font-size: clamp(4rem, 10vw, 6rem); font-weight: 900; color: var(--white); margin: 20px 0; line-height: 1; }
+        .price-features { margin-top: 40px; font-size: 1.1rem; line-height: 2; }
+        .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px 0; }
+        .choice { padding: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .choice h4 { color: var(--white); font-size: 1.3rem; margin-bottom: 20px; }
+        footer { background: var(--primary); color: var(--white); text-align: center; padding: 60px 20px; }
+        .spacer { height: 60px; }
+        @media (max-width: 768px) { section { padding: 80px 20px; } .hero { padding: 100px 20px 80px; } .choices { grid-template-columns: 1fr; } .proof-box, .guarantee { padding: 40px 30px; } .objection, .feature { padding: 30px; } }
     </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
 <section class="hero">
     <div class="container">
-        <h1>You're Already Too Slow.</h1>
-        <p class="hero-subtitle">While you're planning, your competitors are launching.</p>
-        <p class="hero-outcome">This system lets you build, deploy, and start selling in under 37 minutes—without writing a single line of code.</p>
+        <p class="micro-headline">The Execution Speed System</p>
+        <h1><span class="pattern-interrupt">You're Already Too Slow.</span></h1>
+        <p class="mechanism">While you're planning, your competitors are launching. This system changes everything.</p>
+        <p class="outcome">Build, deploy, and start selling in under 37 minutes—without writing code.</p>
         <a href="#offer" class="cta-button">Get The System — $97</a>
+        <p class="micro-reassurance">7-day guarantee • Instant access • Lifetime updates</p>
     </div>
 </section>
 
-<!-- THE PROBLEM -->
-<section>
+<section class="light-section">
     <div class="container">
+        <p class="micro-headline">The Real Problem</p>
         <h2>The Builder's Trap</h2>
-        <p>Let me paint you a picture. It's Monday morning. You've got this great idea for a digital product. Maybe it's a template. Maybe it's a mini-course. Maybe it's a simple tool that solves one specific problem.</p>
-        
-        <p>You open your laptop, ready to build. And then... the paralysis hits.</p>
-        
-        <p>Which platform should you use? Should you learn Webflow? Or maybe WordPress? Or build it from scratch with code? What about the design? You spend 3 hours scrolling through Dribbble looking for inspiration. Then another 2 hours watching YouTube tutorials on "how to build a landing page that converts."</p>
-        
-        <p>By Wednesday, you've got a half-finished page, a dozen browser tabs open, and that sinking feeling that you're in over your head. Your great idea? It's still just an idea. Meanwhile, someone else—someone with less talent but more speed—just launched something similar and is already making sales.</p>
-        
+        <p>It's Monday morning. You've got a great idea for a digital product. A template. A mini-course. A simple tool.</p>
+        <p>You open your laptop, ready to build.</p>
+        <p>And then... the paralysis hits.</p>
+        <p>Which platform? Webflow? WordPress? Code from scratch? You spend 3 hours on Dribbble. Another 2 on YouTube tutorials. By Wednesday, you've got a half-finished page and a dozen browser tabs.</p>
+        <p>Your great idea? Still just an idea.</p>
+        <p class="bold-statement">Meanwhile, someone with less talent but more speed just launched something similar and is already making sales.</p>
         <p>Here's the brutal truth: <strong>In 2026, speed wins. Not perfection. Speed.</strong></p>
-        
-        <p>The creators who are winning right now aren't the ones with the best designs or the most polished products. They're the ones who can go from idea to live offer in a single afternoon. They're the ones who test 10 ideas while their competitors are still perfecting their first one.</p>
-        
-        <p>And you? You're stuck in the builder's trap. Planning. Researching. Learning. But never launching.</p>
+        <p>The creators winning right now aren't the ones with the best designs. They're the ones who go from idea to live offer in a single afternoon. They test 10 ideas while competitors perfect their first one.</p>
+        <p>And you? Stuck in the builder's trap. Planning. Researching. Learning. Never launching.</p>
     </div>
 </section>
 
-<!-- THE BREAKTHROUGH -->
-<section class="dark">
+<section class="gray-section">
     <div class="container">
-        <h2>The 37-Minute Breakthrough</h2>
-        <p>What if I told you that everything I just described—the paralysis, the endless research, the half-finished projects—could be eliminated with one simple shift?</p>
-        
-        <p>What if you could go from "I have an idea" to "I'm live and taking sales" in less time than it takes to watch an episode of your favorite show?</p>
-        
-        <p>That's exactly what happened to me on April 17th, 2026.</p>
-        
-        <p>At 4:56 AM UTC, I decided to test a new landing page. By 5:33 AM—37 minutes later—I had a fully designed, conversion-optimized sales page live on Vercel, connected to a GitHub repository, with automatic deployments enabled.</p>
-        
-        <p>No design software. No coding. No all-nighters. Just a simple command, a few strategic inputs, and a complete sales asset ready to convert visitors into customers.</p>
-        
-        <p>But here's what really matters: That page wasn't just "good enough." It was built using proven direct-response frameworks. It had the 3-part hero structure that stops the scroll. It had the psychological triggers that drive action. It had the objection handling that removes friction.</p>
-        
-        <p>In other words: It wasn't just fast. It was effective.</p>
-        
+        <p class="micro-headline">The Breakthrough</p>
+        <h2>What Happened in 37 Minutes</h2>
+        <p>What if you could go from "I have an idea" to "I'm live and taking sales" in less time than a TV episode?</p>
+        <p>That's exactly what happened on April 17th, 2026.</p>
+        <p>At 4:56 AM UTC, I decided to test a new landing page. By 5:33 AM—37 minutes later—I had a fully designed, conversion-optimized sales page live on Vercel.</p>
+        <p>No design software. No coding. No all-nighters.</p>
+        <p>Just a command, a few strategic inputs, and a complete sales asset ready to convert.</p>
         <div class="proof-box">
-            <h3>📊 The Numbers Don't Lie</h3>
-            <p style="font-size: 1.3rem; margin: 20px 0;"><strong>37 minutes</strong> from idea to live deployment</p>
-            <p style="font-size: 1.3rem; margin: 20px 0;"><strong>3,000+ words</strong> of conversion-optimized copy</p>
-            <p style="font-size: 1.3rem; margin: 20px 0;"><strong>10+ objections</strong> pre-handled</p>
-            <p style="font-size: 1.3rem; margin: 20px 0;"><strong>Zero</strong> coding required</p>
+            <h3>The Numbers Don't Lie</h3>
+            <div class="proof-item"><strong>37 minutes</strong> from idea to live deployment</div>
+            <div class="proof-item"><strong>3,000+ words</strong> of conversion-optimized copy</div>
+            <div class="proof-item"><strong>10 objections</strong> pre-handled and destroyed</div>
+            <div class="proof-item"><strong>Zero coding</strong> required</div>
+            <div class="proof-item"><strong>100% automated</strong> deployment pipeline</div>
         </div>
+        <p>But here's what matters: That page wasn't just "good enough." It was built using proven direct-response frameworks. The 3-part hero structure. The psychological triggers. The objection handling that removes friction.</p>
+        <p class="bold-statement">It wasn't just fast. It was effective.</p>
     </div>
 </section>
 
-<!-- THE SYSTEM -->
-<section>
+<section class="dark-section">
     <div class="container">
+        <p class="micro-headline">The Solution</p>
         <h2>How The OpenClaw System Works</h2>
-        <p>This isn't another course about "how to build a business." This isn't a collection of ChatGPT prompts. This isn't a theory-heavy framework that sounds good but never gets implemented.</p>
-        
-        <p>This is an operational system. A set of tools, templates, and workflows that let you execute at speed without sacrificing quality.</p>
-        
-        <p>Here's what you get:</p>
-        
+        <p>This isn't another course. Not a collection of ChatGPT prompts. Not theory-heavy framework that never gets implemented.</p>
+        <p>This is an operational system. Tools, templates, and workflows that let you execute at speed without sacrificing quality.</p>
+        <h3>Here's What You Get:</h3>
         <div class="feature-grid">
             <div class="feature">
                 <h4>🎯 Hero Section Generator</h4>
-                <p>Create scroll-stopping 3-part headlines in seconds. Pattern interrupt + mechanism reveal + outcome shift = instant attention capture.</p>
+                <p>Create scroll-stopping 3-part headlines in seconds. Pattern interrupt + mechanism reveal + outcome shift.</p>
             </div>
             <div class="feature">
                 <h4>✉️ Email Conversion Engine</h4>
-                <p>Write high-converting emails using the 3-layer system: Category → Framework → Style. From daily emails to hard-hitting sales sequences.</p>
+                <p>Write high-converting emails using the 3-layer system. From daily emails to hard-hitting sales sequences.</p>
             </div>
             <div class="feature">
                 <h4>📝 Master Copywriter</h4>
-                <p>Generate 3,000+ word sales pages with the 8-phase framework. PAS, Before-After-Bridge, Identity Shift, and more.</p>
+                <p>Generate 3,000+ word sales pages with the 8-phase framework. PAS, Before-After-Bridge, Identity Shift.</p>
+            </div>
+            <div class="feature">
+                <h4>📄 Sales Page Generator</h4>
+                <p>Long-form direct-response pages with proof layers, outcome anchoring, objection domination.</p>
             </div>
             <div class="feature">
                 <h4>🎬 VSL Creator</h4>
-                <p>Turn any sales page into a professional video sales letter with voiceover, synced slides, and perfect pacing.</p>
+                <p>Turn any sales page into a professional video sales letter with voiceover and synced slides.</p>
             </div>
             <div class="feature">
                 <h4>🚀 Auto-Deployment</h4>
-                <p>Connect GitHub + Vercel once. Every push goes live automatically. No manual uploads. No FTP. No hassle.</p>
+                <p>Connect GitHub + Vercel once. Every push goes live automatically. No manual uploads.</p>
             </div>
             <div class="feature">
                 <h4>🛠️ Project Setup</h4>
-                <p>Create new projects in minutes with pre-configured repos, linked deployments, and saved credentials.</p>
+                <p>Create new projects in minutes with pre-configured repos, linked deployments, and saved metadata.</p>
+            </div>
+            <div class="feature">
+                <h4>⚙️ Automation Template</h4>
+                <p>Scheduled background tasks using OpenClaw's cron support. Full execution history.</p>
             </div>
         </div>
-        
+        <div class="spacer"></div>
         <h3>This Is NOT Another AI Gimmick</h3>
-        <p>Let's address the elephant in the room. You've seen the AI hype. "Make $10,000 a month with ChatGPT!" "Build a business in 24 hours!" "Passive income on autopilot!"</p>
-        
-        <p>Here's the truth: AI is a tool. A powerful one. But like any tool, it's useless without a system.</p>
-        
-        <p>This system isn't about replacing your brain with AI. It's about amplifying your execution speed. It's about removing the friction between "I have an idea" and "It's live and selling."</p>
-        
-        <p>The AI handles the heavy lifting—the copy generation, the structure, the optimization. You handle the strategy, the positioning, the unique angle that makes your offer stand out.</p>
-        
-        <p>That's the difference between this and every other AI product on the market. This is operational. This is executable. This is designed for people who want to ship, not just study.</p>
+        <p>You've seen the hype. "Make $10K/month with ChatGPT!" "Build a business in 24 hours!"</p>
+        <p>Here's the truth: AI is a tool. A powerful one. But useless without a system.</p>
+        <p>This isn't about replacing your brain with AI. It's about amplifying your execution speed.</p>
+        <p class="bold-statement">That's the difference. This is operational. Executable. Designed for people who ship, not just study.</p>
     </div>
 </section>
 
-<!-- IDENTITY TRANSFORMATION -->
-<section class="dark">
+<section class="light-section">
     <div class="container">
+        <p class="micro-headline">Identity Transformation</p>
         <h2>Who You Become</h2>
         <p>This isn't just about building pages faster. This is about identity transformation.</p>
-        
-        <p>Right now, you might see yourself as a planner. A researcher. Someone who needs to "figure things out" before taking action.</p>
-        
+        <p>Right now, you might see yourself as a planner. A researcher. Someone who needs to "figure things out" before acting.</p>
         <p>But once you have this system, you become something else:</p>
-        
-        <p><strong>An Operator.</strong> Someone who executes. Someone who tests ideas without emotional attachment. Someone who launches while others are still outlining.</p>
-        
-        <p><strong>An Asset Launcher.</strong> Someone who builds digital assets that generate revenue 24/7. Someone who understands that speed of execution is the ultimate competitive advantage.</p>
-        
-        <p><strong>An AI-Native Entrepreneur.</strong> Someone who leverages AI not as a replacement for thinking, but as a multiplier for action. Someone who stays ahead of the curve while others are still debating whether AI is "just a fad."</p>
-        
-        <p><strong>Quietly Dangerous.</strong> While your competitors are posting about their "upcoming launch" for months, you've already tested three variations, found the winner, and scaled it.</p>
-        
-        <h3>The Future Visualization</h3>
-        <p>Imagine waking up tomorrow morning. You reach for your phone, still half-asleep, and see a notification from Stripe. Someone bought your $47 template while you were sleeping.</p>
-        
+        <h3>An Operator</h3>
+        <p>Someone who executes. Who tests ideas without emotional attachment. Who launches while others are still outlining.</p>
+        <h3>An Asset Launcher</h3>
+        <p>Someone who builds digital assets that generate revenue 24/7. Who understands that speed of execution is the ultimate competitive advantage.</p>
+        <h3>An AI-Native Entrepreneur</h3>
+        <p>Someone who leverages AI as a multiplier for action. Who stays ahead while others debate whether AI is "just a fad."</p>
+        <h3>Quietly Dangerous</h3>
+        <p>While competitors post about their "upcoming launch" for months, you've already tested three variations, found the winner, and scaled it.</p>
+        <div class="spacer"></div>
+        <p class="micro-headline">Future Visualization</p>
+        <h2>Imagine Tomorrow Morning</h2>
+        <p>You reach for your phone, still half-asleep. A notification from Stripe.</p>
+        <p>Someone bought your $47 template while you were sleeping.</p>
         <p>You smile, roll over, go back to sleep. Because this isn't a one-time thing. This is your new normal.</p>
-        
-        <p>Or imagine this: It's Tuesday afternoon. You have an idea for a new offer. By Tuesday evening, it's live. By Wednesday morning, you have your first sale. By Friday, you've made $500 and proven the concept works.</p>
-        
-        <p>No waiting. No perfectionism. No "I'll launch next month when everything is ready."</p>
-        
+        <p class="bold-statement">Or imagine this: Tuesday afternoon, you have an idea. By Tuesday evening, it's live. By Wednesday morning, your first sale. By Friday, $500 and a proven concept.</p>
+        <p>No waiting. No perfectionism. No "I'll launch next month."</p>
         <p>Just pure, unfiltered execution speed.</p>
-        
-        <p>That's who you become with this system.</p>
+        <p>That's who you become.</p>
     </div>
 </section>
 
-<!-- OBJECTION HANDLING -->
-<section>
+<section class="gray-section">
     <div class="container">
-        <h2>Every Objection Destroyed</h2>
-        <p>Before you invest, let me address the doubts that are probably running through your mind right now:</p>
-        
+        <p class="micro-headline">Objection Domination</p>
+        <h2>Every Doubt Destroyed</h2>
+        <p>Before you invest, let me address what's running through your mind:</p>
         <div class="objection">
             <h4>"I don't have time."</h4>
-            <p>That's exactly why you need this. The system saves you time. What used to take days now takes minutes. You're not adding work—you're removing friction. The 37-minute build time isn't a theory. It's what just happened when I created the page you're reading right now.</p>
+            <p>That's exactly why you need this. The system saves you time. What used to take days now takes minutes. The 37-minute build time isn't theory. It's what just happened.</p>
         </div>
-        
         <div class="objection">
-            <h4>"I've bought courses before and never finished them."</h4>
-            <p>This isn't a course. There are no modules to complete. No homework to submit. This is a toolset. You use it when you need it. Create a landing page today. Write an email sequence tomorrow. Build a VSL next week. No "finishing" required—just executing.</p>
+            <h4>"I've bought courses before and never finished."</h4>
+            <p>This isn't a course. No modules. No homework. This is a toolset. Use it when you need it. No "finishing" required—just executing.</p>
         </div>
-        
         <div class="objection">
             <h4>"I'm not technical."</h4>
-            <p>Perfect. Neither am I. That's why this system exists. The AI handles the technical heavy lifting. You just provide the strategy and direction. If you can type a sentence, you can use this system. The deployment is automatic. The copy is generated. The structure is proven.</p>
+            <p>Perfect. Neither am I. The AI handles the technical heavy lifting. If you can type a sentence, you can use this system.</p>
         </div>
-        
         <div class="objection">
             <h4>"AI is overhyped."</h4>
-            <p>Maybe. But execution speed isn't. Even if AI was just a fancy autocomplete, the time savings would be worth it. The fact that AI can now generate conversion-optimized copy, create professional designs, and handle deployment? That's not hype. That's leverage.</p>
+            <p>Maybe. But execution speed isn't. Even if AI was just fancy autocomplete, the time savings would be worth it.</p>
         </div>
-        
         <div class="objection">
             <h4>"Traffic won't convert."</h4>
-            <p>That's a traffic problem, not a conversion problem. This system gives you the assets that convert. The copy is written using proven direct-response frameworks. The design follows conversion best practices. If you send targeted traffic to these pages, they will convert. The question isn't "will it work?"—it's "will you drive traffic to find out?"</p>
+            <p>That's a traffic problem, not conversion. This system gives you assets that convert. Copy written using proven frameworks.</p>
         </div>
-        
         <div class="objection">
             <h4>"What niche works?"</h4>
-            <p>Any niche where people have problems they want solved. The system is niche-agnostic. Templates. Courses. Tools. Services. Physical products. The frameworks work because they're based on human psychology, not market specifics.</p>
+            <p>Any niche where people have problems they want solved. The system is niche-agnostic. The frameworks work because they're based on human psychology.</p>
         </div>
-        
         <div class="objection">
             <h4>"Stripe/payment setup scares me."</h4>
-            <p>Stripe takes 10 minutes to set up. Literally. And once it's connected, it just works. The system includes step-by-step instructions. Plus, you can start with simple payment links before graduating to full checkout flows. Start simple, scale up.</p>
+            <p>Stripe takes 10 minutes to set up. Literally. The system includes step-by-step instructions. Start simple, scale up.</p>
         </div>
-        
         <div class="objection">
             <h4>"I don't have an audience."</h4>
-            <p>Neither did I when I started. Audience building and product building can happen in parallel. In fact, building in public—sharing your process as you create—is one of the fastest ways to grow an audience. The speed of this system lets you do that.</p>
+            <p>Neither did I when I started. Audience building and product building happen in parallel. Building in public is one of the fastest ways to grow.</p>
         </div>
-        
         <div class="objection">
             <h4>"What if I'm not creative?"</h4>
-            <p>Creativity isn't required. Strategy is. The system gives you the creative structure. You just need to know what problem you're solving and who you're solving it for. The AI handles the rest. You're the strategist. The AI is the executor.</p>
+            <p>Creativity isn't required. Strategy is. The system gives you creative structure. You're the strategist. The AI is the executor.</p>
         </div>
-        
         <div class="objection">
             <h4>"What if it doesn't work for me?"</h4>
-            <p>That's what the guarantee is for. Try it for 7 days. Build a page. Write some emails. Create a VSL. If you don't see the value—if you can't imagine how this saves you time and makes you money—email me for a full refund. No questions asked. No hard feelings.</p>
+            <p>That's what the guarantee is for. Try it for 7 days. If you don't see the value, email for a full refund. No questions.</p>
         </div>
     </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section class="dark">
+<section class="dark-section">
     <div class="container">
+        <p class="micro-headline">Complete Deliverables</p>
         <h2>Everything You Get</h2>
-        <p>This isn't a skimpy PDF with a few tips. This is a complete operational system:</p>
-        
-        <h3>✅ Hero Section Generator Skill</h3>
-        <p>Generate 3-part headlines that stop the scroll. Pattern interrupts that challenge beliefs. Mechanism reveals that explain the "how." Outcome shifts that show the transformation. Use this for every landing page, sales page, and opt-in you create.</p>
-        
-        <h3>✅ Email Conversion Engine Skill</h3>
-        <p>Write any type of email: Sales, Story, Authority, Curiosity, Relationship, or Urgency. Choose your style: Daily Email, Direct Response, Story Sell, Big Opportunity, or Clean Professional. The 3-layer system (Category → Framework → Style) makes it foolproof.</p>
-        
-        <h3>✅ Master Copywriter Skill</h3>
-        <p>Generate 3,000+ word sales pages using the 8-phase framework. PAS. Before-After-Bridge. Identity Shift. Secret Mechanism. Speed Case Study. Opportunity Cost. Choose your emotional driver and let the system build the complete psychological conversion stack.</p>
-        
-        <h3>✅ Sales Page Generator Skill</h3>
-        <p>Long-form direct-response pages with external proof layers, specific outcome anchoring, objection domination (10+ objections), identity transformation, future visualization scenes, differentiation sections, and urgency mechanisms. Minimum 2,500 words of conversion-maximized copy.</p>
-        
-        <h3>✅ VSL (Video Sales Letter) Skill</h3>
-        <p>Turn any sales page into a professional video. 5-6 minute scripts optimized for retention. Voice generation with perfect pacing. Auto-synced slides with UPPERCASE text. White background, black text, professional design. Rendered and ready to upload.</p>
-        
-        <h3>✅ Project Setup Skill</h3>
-        <p>Create new projects in minutes. GitHub repo creation. Vercel project setup. Automatic linking. Metadata saved for future reference. Never set up deployment infrastructure from scratch again.</p>
-        
-        <h3>✅ Deployment Setup Skill</h3>
-        <p>One-time connection of GitHub and Vercel. After that, every push goes live automatically. Your deployment pipeline, handled.</p>
-        
+        <p>This isn't a skimpy PDF. This is a complete operational system:</p>
+        <h3>✅ Hero Section Generator</h3>
+        <p>Generate 3-part headlines that stop the scroll. Pattern interrupts. Mechanism reveals. Outcome shifts.</p>
+        <h3>✅ Email Conversion Engine</h3>
+        <p>Write any type of email: Sales, Story, Authority, Curiosity, Relationship, Urgency.</p>
+        <h3>✅ Master Copywriter</h3>
+        <p>Generate 3,000+ word sales pages using the 8-phase framework.</p>
+        <h3>✅ Sales Page Generator</h3>
+        <p>Long-form direct-response pages with proof layers, outcome anchoring, objection domination.</p>
+        <h3>✅ VSL Creator</h3>
+        <p>Turn any sales page into a professional video sales letter.</p>
+        <h3>✅ Project Setup</h3>
+        <p>Create new projects in minutes. GitHub repo creation. Vercel project setup.</p>
+        <h3>✅ Deployment Setup</h3>
+        <p>One-time connection of GitHub and Vercel. Every push goes live automatically.</p>
         <h3>✅ Control Board Integration</h3>
-        <p>Unified dashboard for managing clips, articles, videos, social posts, and bot state. Workspace-scoped data with full API access. Monitor everything from one central command center.</p>
-        
-        <h3>✅ Options Chain Research Skill</h3>
-        <p>For traders who want to analyze options chains quickly. Research strikes, expirations, and strategies without getting lost in data. Built for speed and clarity.</p>
-        
-        <h3>✅ Create Business Skill</h3>
-        <p>Multi-stage business and product creation engine. Ideate opportunities, design offers, create sales page assets, and plan traffic/optimization in a staged, stop-and-wait workflow.</p>
-        
+        <p>Unified dashboard for managing clips, articles, videos, social posts.</p>
+        <h3>✅ Options Chain Research</h3>
+        <p>For traders who want to analyze options chains quickly.</p>
+        <h3>✅ Create Business Engine</h3>
+        <p>Multi-stage business and product creation.</p>
         <h3>✅ API Integration Template</h3>
-        <p>Template for connecting external APIs. Authentication, endpoints, error handling—all pre-structured. Just plug in your API details and go.</p>
-        
+        <p>Template for connecting external APIs.</p>
         <h3>✅ Automation Template</h3>
-        <p>Scheduled background tasks using OpenClaw's cron support. Setup, list, pause, resume commands for managing cron jobs. Log files for execution history. Configurable schedules.</p>
-        
-        <p style="font-size: 1.2rem; margin-top: 40px; text-align: center;"><strong>Total Value: $4,997+</strong></p>
+        <p>Scheduled background tasks using OpenClaw's cron support.</p>
+        <p class="bold-statement" style="margin-top: 60px;">Total Value: $4,997+</p>
     </div>
 </section>
 
-<!-- GUARANTEE -->
-<section>
+<section class="light-section">
     <div class="container">
         <div class="guarantee">
             <h3>🛡️ The "Try It and See" Guarantee</h3>
-            <p style="font-size: 1.2rem; margin: 20px 0;">Here's my promise to you:</p>
+            <p style="font-size: 1.2rem; margin: 30px 0;">Here's my promise:</p>
             <p>Get the system. Use it for 7 days. Build a landing page. Write an email sequence. Create a VSL script. See how fast you can go from idea to execution.</p>
-            <p>If you don't think this is worth at least 10x what you paid, email me for a full refund. No questions. No hoops to jump through. No "show me your work" requirements.</p>
-            <p style="font-size: 1.3rem; margin-top: 30px;"><strong>7-Day Money-Back Guarantee</strong></p>
+            <p style="margin-top: 30px;">If you don't think this is worth at least 10x what you paid, email for a full refund. No questions. No hoops.</p>
+            <p style="font-size: 1.5rem; margin-top: 40px; color: var(--accent);"><strong>7-Day Money-Back Guarantee</strong></p>
         </div>
     </div>
 </section>
 
-<!-- URGENCY -->
-<section class="dark">
+<section class="accent-section">
     <div class="container">
-        <h2>Why Now?</h2>
-        <p>Every day you wait is a day your competitors are getting faster.</p>
-        
-        <p>The window for early-mover advantage is closing. Right now, having AI-powered execution speed is an edge. In 6 months, it'll be table stakes. The creators who build their operational systems now will be the ones who dominate later.</p>
-        
-        <p>Think about it: If you could launch 5 offers in the next 30 days instead of 1, what would that do for your business? If you could test ideas in an afternoon instead of a month, how many more winners would you find?</p>
-        
-        <p>Speed compounds. The faster you execute, the faster you learn. The faster you learn, the faster you improve. The faster you improve, the more you earn.</p>
-        
-        <p>Think about where you'll be in 90 days if you start today. You'll have launched multiple offers. You'll have tested different angles. You'll have data on what works. You'll have revenue coming in while you sleep.</p>
-        
-        <p>Now think about where you'll be in 90 days if you don't start. Still planning. Still researching. Still "getting ready." Watching other people execute the ideas you had months ago.</p>
-        
-        <p>The difference isn't talent. It's not resources. It's not luck. It's execution speed. And this system gives you that speed.</p>
-        
-        <p>But only if you start.</p>
-        
-        <p>The price will go up. As I add more skills, more templates, more automations, the value increases—and so does the price. Right now, you're getting everything at founder pricing.</p>
-        
-        <p>Don't wait. Don't overthink. Don't let another idea die in the planning stage.</p>
-        
-        <p>Get the system. Build something. Launch it. Today. Not tomorrow. Not next week. Today. Because every day you delay is a day your competitors gain ground. Every day you wait is a day someone else captures the market you could have owned. Take action now.</p>
-        
-        <p>Remember: The creators who win aren't the ones with the best ideas. They're the ones who execute fastest. They're the ones who test 10 variations while their competitors perfect their first one. They're the ones who understand that done is better than perfect, and launched is better than planned.</p>
-        
-        <p>That could be you. Starting right now.</p>
+        <p class="micro-headline" style="color: rgba(255,255,255,0.8);">Why Now</p>
+        <h2>The Window Is Closing</h2>
+        <p>Every day you wait is a day your competitors get faster.</p>
+        <p>The window for early-mover advantage is closing. Right now, AI-powered execution speed is an edge. In 6 months, it'll be table stakes.</p>
+        <p class="bold-statement" style="background: rgba(255,255,255,0.2); color: white; border-left-color: white;">Speed compounds. The faster you execute, the faster you learn. The faster you learn, the faster you improve. The faster you improve, the more you earn.</p>
+        <p>Think about where you'll be in 90 days if you start today. Multiple offers launched. Different angles tested. Data on what works. Revenue coming in while you sleep.</p>
+        <p>Now think about 90 days if you don't start. Still planning. Still researching. Still "getting ready."</p>
+        <p class="bold-statement" style="background: rgba(255,255,255,0.2); color: white; border-left-color: white;">It's execution speed. And this system gives you that speed.</p>
+        <p>Don't wait. Don't overthink. Don't let another idea die in planning.</p>
+        <p style="font-size: 1.3rem; font-weight: 700; margin-top: 40px;">Get the system. Build something. Launch it. Today.</p>
     </div>
 </section>
 
-<!-- OFFER -->
-<section class="price-section" id="offer">
+<section class="dark-section price-section" id="offer">
     <div class="container">
+        <p class="micro-headline">Limited Time</p>
         <h2>Get The Complete System</h2>
         <p class="price-old">$497</p>
         <p class="price">$97</p>
-        <p style="font-size: 1.3rem; margin-bottom: 40px;">One-time payment. Lifetime access. All future updates included.</p>
-        
+        <p style="font-size: 1.3rem; margin-bottom: 50px; opacity: 0.9;">One-time payment. Lifetime access. All future updates.</p>
         <a href="#" class="cta-button">Get Instant Access — $97</a>
-        
-        <p style="margin-top: 30px; opacity: 0.8;">✅ 8 Complete Skills<br>
-        ✅ 3,000+ Word Sales Pages<br>
-        ✅ Auto-Deployment Pipeline<br>
-        ✅ 7-Day Money-Back Guarantee<br>
-        ✅ Lifetime Updates</p>
-        
-        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.6;">Secure checkout. Instant access. Start building in minutes.</p>
+        <div class="price-features">
+            <p>✅ 12 Complete Skills</p>
+            <p>✅ 3,000+ Word Sales Pages</p>
+            <p>✅ Auto-Deployment Pipeline</p>
+            <p>✅ 7-Day Money-Back Guarantee</p>
+            <p>✅ Lifetime Updates</p>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.95rem; opacity: 0.7;">Secure checkout. Instant access. Start building in minutes.</p>
     </div>
 </section>
 
-<!-- FINAL CTA -->
-<section>
+<section class="light-section">
     <div class="container">
-        <h2>You Have Two Choices</h2>
-        <p><strong>Choice One:</strong> Keep doing what you're doing. Keep planning. Keep researching. Keep "getting ready." Watch other people launch ideas that you had months ago. Stay stuck in the builder's trap.</p>
-        
-        <p><strong>Choice Two:</strong> Get the system. Become an operator. Launch while your competitors are still outlining. Build assets that generate revenue while you sleep. Transform from planner to executor. Join the ranks of creators who execute at speed and win because of it.</p>
-        
-        <p>The choice is yours. But you already know which one leads to the life you actually want. The life where you're not stuck in planning mode. The life where your ideas see the light of day. The life where you build assets that work for you, instead of you working for every dollar.</p>
-        
-        <p style="text-align: center; margin-top: 40px;">
+        <p class="micro-headline">Your Choice</p>
+        <h2>Two Paths Forward</h2>
+        <div class="choices">
+            <div class="choice" style="background: var(--light);">
+                <h4 style="color: var(--text-light);">Choice One</h4>
+                <p>Keep doing what you're doing. Keep planning. Keep researching. Keep "getting ready." Watch other people launch ideas you had months ago.</p>
+            </div>
+            <div class="choice" style="background: var(--primary); color: white;">
+                <h4 style="color: var(--accent);">Choice Two</h4>
+                <p>Get the system. Become an operator. Launch while competitors are still outlining. Build assets that generate revenue while you sleep.</p>
+            </div>
+        </div>
+        <p class="bold-statement">The choice is yours. But you already know which one leads to the life you actually want.</p>
+        <p style="text-align: center; margin-top: 50px;">
             <a href="#offer" class="cta-button">Get The System — $97</a>
         </p>
-        
         <p style="text-align: center; margin-top: 30px; font-style: italic;">P.S. — Every day you wait is a day someone else launches. Don't let them beat you with your own idea.</p>
-        
-        <p style="text-align: center; margin-top: 20px; font-style: italic;">P.P.S. — Still on the fence? Think about this: In the time it took you to read this page, someone using this system just deployed a new offer. They're already getting traffic. They're already testing. They're already learning. While you're still deciding, they're already executing. Don't let that be the story of your business. Make today the day you change the narrative.</p>
+        <p style="text-align: center; margin-top: 20px; font-style: italic;">P.P.S. — In the time you read this page, someone using this system deployed a new offer. They're already executing. Don't let that be your story.</p>
     </div>
 </section>
 
